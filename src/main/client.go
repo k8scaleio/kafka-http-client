@@ -45,13 +45,13 @@ func sendMessage(w http.ResponseWriter, r *http.Request) {
 func receiveMessage(w http.ResponseWriter, r *http.Request) {
 	log.Println("Consuming message ")
 	topics := []string{"test"}
-	consumer.Consume(broker, "", topics)
+	consumer.Consume(broker, "consumer-1", topics)
 }
 
 func receiveStats(w http.ResponseWriter, r *http.Request) {
 	log.Println("Consuming message ")
 	topics := []string{"test"}
-	stats.GetStats(broker, "", topics)
+	stats.GetStats(broker, "stats-consumer-1", topics)
 }
 
 

@@ -8,7 +8,7 @@ import (
 	"syscall"
 )
 
-func Consume(broker string, group string, topics []string) {
+func Consume(broker string, group string, topics []string) string {
 	sigchan := make(chan os.Signal, 1)
 	signal.Notify(sigchan, syscall.SIGINT, syscall.SIGTERM)
 
